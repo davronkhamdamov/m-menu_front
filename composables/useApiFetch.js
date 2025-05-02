@@ -26,7 +26,9 @@ export async function useApiFetch(
     .then((res) => res.json())
     .then((data) => {
       if (data.status == 401 || data.status == 404) {
-        window.location = "/login";
+        // window.location = "/login";
+        console.log(data);
+        
       }
       return data;
     })

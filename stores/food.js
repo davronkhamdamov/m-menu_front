@@ -9,9 +9,7 @@ export const useFoodStore = defineStore("foodStore", () => {
   const isLoading = ref(true);
 
   const fetchFoods = async (lang) => {
-    const response = await useApiFetch(
-      "/v1/food-with-category",lang
-    );
+    const response = await useApiFetch("/v1/food-with-category", lang);
     foods.value = response.data || [];
     isLoading.value = false;
   };
