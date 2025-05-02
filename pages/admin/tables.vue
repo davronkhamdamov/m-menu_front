@@ -34,6 +34,8 @@ const pagination = ref({
     total: 0
 })
 
+const config = useRuntimeConfig();
+const baseURL = config.public.apiBaseUrl;
 const printQRCode = (imgUrl) => {
     const screenWidth = window.screen.availWidth
     const screenHeight = window.screen.availHeight
@@ -107,7 +109,7 @@ const columns = [
                 h(CreateTable, { id: row.getValue("id"), fetchData }),
                 h(UButton, {
                     variant: "ghost",
-                    onClick: () => printQRCode('http:\/\/localhost:8080/v1/table/' + row.getValue("id")),
+                    onClick: () => printQRCode(`${baseURL}/v1/table/${row.getValue("id")}`),
                     icon: "material-symbols:qr-code"
                 }),
                 h(DeleteModal, { id: row.getValue("id"), type: "table", fetchData })
