@@ -32,10 +32,10 @@ export default defineNuxtConfig({
       redirectOn: "root",
     },
   },
-   runtimeConfig: {
+  runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.NUXT_API_BASE_URL || 'http://localhost:8080',
-      apiWsBaseUrl: process.env.NUXT_WS_API_BASE_URL || 'ws://localhost:8080',
+      apiBaseUrl: process.env.NUXT_API_BASE_URL || "http://localhost:8080",
+      apiWsBaseUrl: process.env.NUXT_API_WS_BASE_URL || "ws://localhost:8080",
     },
   },
 });
