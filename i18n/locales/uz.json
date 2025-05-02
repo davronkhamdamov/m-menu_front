@@ -1,0 +1,138 @@
+{
+  "name": "Oʻzbek",
+  "code": "uz",
+  "dashboard": "Boshqaruv paneli",
+  "table": "Stollar",
+  "categorie": "Toifalar",
+  "food": "Ovqatlar",
+  "staff": "Xodimlar",
+  "settings": "Sozlamalar",
+  "adminDashboard": "Admin Paneli",
+  "welcomeAdmin": "Xush kelibsiz, Admin",
+  "chooseTheme": "Mavzuni tanlang",
+  "dark": "Qorong‘i",
+  "chooseLanguage": "Tilni tanlang",
+  "adminSettingsComingSoon": "Admin sozlamalari interfeysi tez orada mavjud bo‘ladi.",
+  "staffs": "Xodimlar",
+  "foods": "Ovqatlar",
+  "order": "Buyurtma",
+  "addNewFood": "Yangi ovqat qo'shish",
+  "name_of": "Nomi",
+  "price": "Narxi",
+  "weight": "Og'irligi",
+  "availability": "Mavjudligi",
+  "currency": " so'm",
+  "available": "Mavjud",
+  "notAvailable": "Mavjud emas",
+  "categories": "Toifalar",
+  "addNewCategory": "Yangi toifa qo'shish",
+  "tables": "Stollar",
+  "add_employee": "Yangi xodim qo'shish",
+  "enter_login": "Loginni kiriting",
+  "login": "Login",
+  "enter_password": "Parolni kiriting",
+  "number": "Raqami",
+  "add_food": "Yangi ovqat qo'shish",
+  "food_name": "Ovqat nomi",
+  "password": "Parol",
+  "enter_food_name": "Ovqat nomi kiriting",
+  "food_price": "Ovqat narxi",
+  "food_weight": "Ovqat og'irligi",
+  "food_weight_type": "Ovqat og'irlik turi",
+  "select_weight_type": "Ovqat og'irlik turini tanlang",
+  "select_category": "Ovqat toifasini tanlang",
+  "choose_image": "Ovqat rasmini tanlang",
+  "cancel": "Bekor qilish",
+  "create": "Yaratish",
+  "delete": "O'chirish",
+  "addNewTable": "Yangi stol qo'shish",
+  "table_number": "Stol raqami",
+  "confirm_delete_table": "Stolni rostdan ham o'chirmoqchimisiz?",
+  "login_validation": "Login 3 tadan ko'p bo'lishi kerak",
+  "password_validation": "Parol kamida 6 ta belgidan iborat bo'lishi kerak",
+  "food_name_validation": "Ovqat nomi 3 tadan ko'p bo'lishi kerak",
+  "food_price_validation": "Ovqat narxi kamida 1000 so'md bo'lishi kerak",
+  "food_weight_validation": "Ovqat og'irligi 0.1 dan yuqori bo'lishi kerak",
+  "please_enter_food_name": "Iltimos ovqat nomini kiriting",
+  "please_enter_food_price": "Iltimos ovqat narxini kiriting",
+  "please_enter_food_weight": "Iltimos ovqat og'irligini kiriting",
+  "please_select_food_category": "Iltimos ovqat toifasini tanlang",
+  "please_enter_image_url": "Iltimos rasm  kiriting",
+  "enter_food_price": "Ovqat narxini kiriting",
+  "enter_food_weight": "Ovqat og'irligini kiriting",
+  "select_food_weight_type": "Ovqat og'irlik turini tanlang",
+  "select_food_category": "Ovqat toifasini tanlang",
+  "orders": "Buyurtmalar",
+  "feedback": "Fikr-mulohaza",
+  "star": "Yulduz",
+  "region": "Hudud",
+  "created_at": "Yaratilgan vaqti",
+  "ordered_date": "Buyurtma sanasi",
+  "total": "Jami summa",
+  "messages": {
+    "inputMenu": {
+      "noMatch": "Mos keluvchi natija topilmadi",
+      "noData": "Maʼlumot yoʻq",
+      "create": "\"{label}\" yaratish"
+    },
+    "calendar": {
+      "prevYear": "Oldingi yil",
+      "nextYear": "Keyingi yil",
+      "prevMonth": "Oldingi oy",
+      "nextMonth": "Keyingi oy"
+    },
+    "inputNumber": {
+      "increment": "Qoʻshish",
+      "decrement": "Ayirish"
+    },
+    "commandPalette": {
+      "placeholder": "Buyruq kiriting yoki qidiring...",
+      "noMatch": "Mos keluvchi natija topilmadi",
+      "noData": "Maʼlumot yoʻq",
+      "close": "Yopish"
+    },
+    "selectMenu": {
+      "noMatch": "Mos keluvchi natija topilmadi",
+      "noData": "Maʼlumot yoʻq",
+      "create": "\"{label}\" yaratish",
+      "search": "Qidirish..."
+    },
+    "toast": {
+      "close": "Yopish"
+    },
+    "carousel": {
+      "prev": "Ortga",
+      "next": "Oldinga",
+      "goto": "{slide}-slaydga o‘tish"
+    },
+    "modal": {
+      "close": "Yopish"
+    },
+    "slideover": {
+      "close": "Yopish"
+    },
+    "alert": {
+      "close": "Yopish"
+    },
+    "table": {
+      "noData": "Maʼlumot yoʻq"
+    }
+  },
+  "next": "Keyingisi",
+  "minute": "daqiqa",
+  "sending": "Yuborilmoqda...",
+  "ordering": "Buyurtma berish",
+   "accepted": "Sizning buyurtmangiz qabul qilindi",
+   "RateService": "Xizmat sifatini baholang",
+   "rateTitle": "Bizning xizmatlarimizni baholang",
+   "rateInstruction": "1 dan 5 gacha baholang",
+   "leaveFeedback": "Xizmat haqida o'z fikringizni qoldiring",
+   "selectCountry": "Mamlakatingizni tanlang:",
+   "selectPlaceholder": "Mamlakat tanlang...",
+   "send": "Jo'natish",
+   "later": "Keyinroqqa qoldirish",
+   "orderAccepted": "Buyurtma qabul qilindi",
+  "preparing": "Tayyorlanmoqda",
+  "orderReady": "Buyurtmangiz tayyor"
+  
+}

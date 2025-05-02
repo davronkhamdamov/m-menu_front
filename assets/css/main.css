@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+    --animate-wiggle: wiggle 1s ease-in-out forwards;
+
+    @keyframes wiggle {
+        100% {
+            filter: drop-shadow(0 0 5px yellow);
+        }
+    }
+}

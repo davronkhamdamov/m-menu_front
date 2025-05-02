@@ -1,0 +1,137 @@
+{
+  "name": "English",
+  "code": "en",
+  "dashboard": "Dashboard",
+  "table": "Tables",
+  "categorie": "Categories",
+  "food": "Food",
+  "staff": "Staff",
+  "settings": "Settings",
+  "adminDashboard": "Admin Dashboard",
+  "welcomeAdmin": "Welcome, Admin",
+  "chooseTheme": "Choose Theme",
+  "dark": "Dark",
+  "chooseLanguage": "Choose Language",
+  "adminSettingsComingSoon": "Rest of admin settings interface coming soon.",
+  "foods": "Foods",
+  "addNewFood": "Add New Food",
+  "name_of": "Name",
+  "price": "Price",
+  "weight": "Weight",
+  "availability": "Availability",
+  "password": "Password",
+  "currency": " sum",
+  "login_validation": "Login must be more than 3 characters",
+  "password_validation": "Password must be at least 6 characters long",
+  "available": "Available",
+  "notAvailable": "Not Available",
+  "categories": "Categories",
+  "login": "Login",
+  "addNewCategory": "Add New Category",
+  "addNewTable": "Add New Table",
+  "tables": "Tables",
+  "add_food": "Add New Food",
+  "food_name": "Food Name",
+  "enter_food_name": "Enter food name",
+  "add_employee": "Add New Employee",
+  "enter_login": "Enter login",
+  "enter_password": "Enter password",
+  "food_price": "Food Price",
+  "food_weight": "Food Weight",
+  "order": "Order",
+  "food_weight_type": "Food Weight Type",
+  "select_weight_type": "Select food weight type",
+  "select_category": "Select food category",
+  "choose_image": "Choose food image",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "create": "Create",
+  "confirm_delete_table": "Are you sure you really want to delete the table?",
+  "number": "Number",
+  "table_number": "Table number",
+  "food_name_validation": "Food name must be more than 3 characters",
+  "food_price_validation": "Food price must be at least 1000 UZS",
+  "food_weight_validation": "Food weight must be greater than 0.1",
+  "please_enter_food_name": "Please enter the food name",
+  "please_enter_food_price": "Please enter the food price",
+  "please_enter_food_weight": "Please enter the food weight",
+  "please_select_food_category": "Please select the food category",
+  "please_enter_image_url": "Please enter the image",
+  "enter_food_price": "Enter the food price",
+  "enter_food_weight": "Enter the food weight",
+  "select_food_weight_type": "Select food weight type",
+  "select_food_category": "Select food category",
+  "orders": "Orders",
+  "feedback": "Feedback",
+  "star": "Star",
+  "region": "Region",
+  "created_at": "Created At",
+  "ordered_date": "Ordered Date",
+  "total": "Total Amount",
+  "messages": {
+    "inputMenu": {
+      "noMatch": "No matching data",
+      "noData": "No data",
+      "create": "Create \"{label}\""
+    },
+    "calendar": {
+      "prevYear": "Previous year",
+      "nextYear": "Next year",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month"
+    },
+    "inputNumber": {
+      "increment": "Increment",
+      "decrement": "Decrement"
+    },
+    "commandPalette": {
+      "placeholder": "Type a command or search...",
+      "noMatch": "No matching data",
+      "noData": "No data",
+      "close": "Close"
+    },
+    "selectMenu": {
+      "noMatch": "No matching data",
+      "noData": "No data",
+      "create": "Create \"{label}\"",
+      "search": "Search..."
+    },
+    "toast": {
+      "close": "Close"
+    },
+    "carousel": {
+      "prev": "Prev",
+      "next": "Next",
+      "goto": "Go to slide {slide}"
+    },
+    "modal": {
+      "close": "Close"
+    },
+    "slideover": {
+      "close": "Close"
+    },
+    "alert": {
+      "close": "Close"
+    },
+    "table": {
+      "noData": "No data"
+    }
+  },
+  "next": "Next",
+  "minute": "minute",
+  "sending": "Sending...",
+  "ordering": "Ordering",
+  "accepted": "Your order has been received",
+  "RateService": "Rate the quality of service",
+  "rateTitle": "Rate our service",
+  "rateInstruction": "Rate from 1 to 5",
+  "leaveFeedback": "Leave your feedback about the service",
+  "selectCountry": "Select your country:",
+  "selectPlaceholder": "Choose a country...",
+  "send": "Send",
+  "later": "Maybe later",
+  "orderAccepted": "Order accepted",
+  "preparing": "Preparing",
+  "orderReady": "Your order is ready"
+
+}

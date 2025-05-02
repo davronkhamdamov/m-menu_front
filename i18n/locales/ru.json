@@ -1,0 +1,137 @@
+{
+  "name": "Русский",
+  "code": "ru",
+  "dashboard": "Панель управления",
+  "table": "Столы",
+  "categorie": "Категории",
+  "food": "Блюда",
+  "staff": "Персонал",
+  "settings": "Настройки",
+  "adminDashboard": "Админ Панель",
+  "welcomeAdmin": "Добро пожаловать, Админ",
+  "chooseTheme": "Выберите тему",
+  "dark": "Тёмная",
+  "chooseLanguage": "Выберите язык",
+  "adminSettingsComingSoon": "Оставшаяся часть интерфейса настроек администратора скоро будет доступна.",
+  "staffs": "Персонал",
+  "foods": "Блюда",
+  "addNewFood": "Добавить новое блюдо",
+  "name_of": "Название",
+  "order": "Заказ",
+  "price": "Цена",
+  "weight": "Вес",
+  "availability": "Наличие",
+  "currency": " сум",
+  "available": "Доступно",
+  "notAvailable": "Недоступно",
+  "categories": "Категории",
+  "addNewCategory": "Добавить новую категорию",
+  "tables": "Столы",
+  "number": "Номер",
+  "addNewTable": "Добавить новый стол",
+  "password": "Пароль",
+  "login": "Логин",
+  "delete": "Удалить",
+  "login_validation": "Логин должен содержать более 3 символов",
+  "password_validation": "Пароль должен содержать не менее 6 символов",
+  "add_food": "Добавить новое блюдо",
+  "food_name": "Название блюда",
+  "add_employee": "Добавить нового сотрудника",
+  "enter_login": "Введите логин",
+  "enter_password": "Введите пароль",
+  "enter_food_name": "Введите название блюда",
+  "food_price": "Цена блюда",
+  "food_weight": "Вес блюда",
+  "food_weight_type": "Тип веса блюда",
+  "select_weight_type": "Выберите тип веса блюда",
+  "select_category": "Выберите категорию блюда",
+  "choose_image": "Выберите изображение блюда",
+  "confirm_delete_table": "Вы действительно хотите удалить стол?",
+  "cancel": "Отмена",
+  "create": "Создать",
+  "table_number": "Номер стола",
+  "food_name_validation": "Название блюда должно содержать более 3 символов",
+  "food_price_validation": "Цена блюда должна быть не менее 1000 сум",
+  "food_weight_validation": "Вес блюда должен быть больше 0.1",
+  "please_enter_food_name": "Пожалуйста, введите название блюда",
+  "please_enter_food_price": "Пожалуйста, введите цену блюда",
+  "please_enter_food_weight": "Пожалуйста, введите вес блюда",
+  "please_select_food_category": "Пожалуйста, выберите категорию блюда",
+  "please_enter_image_url": "Пожалуйста, введите изображения",
+  "enter_food_price": "Введите цену блюда",
+  "enter_food_weight": "Введите вес блюда",
+  "select_food_weight_type": "Выберите тип веса блюда",
+  "select_food_category": "Выберите категорию блюда",
+  "feedback": "Обратная связь",
+  "orders": "Заказы",
+  "star": "Звезда",
+  "region": "Регион",
+  "created_at": "Время создания",
+  "ordered_date": "Дата заказа",
+  "total": "Общая сумма",
+  "messages": {
+    "inputMenu": {
+      "noMatch": "Совпадений не найдено",
+      "noData": "Нет данных",
+      "create": "Создать \"{label}\""
+    },
+    "calendar": {
+      "prevYear": "Предыдущий год",
+      "nextYear": "Следующий год",
+      "prevMonth": "Предыдущий месяц",
+      "nextMonth": "Следующий месяц"
+    },
+    "inputNumber": {
+      "increment": "Увеличить",
+      "decrement": "Уменьшить"
+    },
+    "commandPalette": {
+      "placeholder": "Введите команду или выполните поиск...",
+      "noMatch": "Совпадений не найдено",
+      "noData": "Нет данных",
+      "close": "Закрыть"
+    },
+    "selectMenu": {
+      "noMatch": "Совпадений не найдено",
+      "noData": "Нет данных",
+      "create": "Создать \"{label}\"",
+      "search": "Поиск..."
+    },
+    "toast": {
+      "close": "Закрыть"
+    },
+    "carousel": {
+      "prev": "Назад",
+      "next": "Далее",
+      "goto": "Перейти к {slide}"
+    },
+    "modal": {
+      "close": "Закрыть"
+    },
+    "slideover": {
+      "close": "Закрыть"
+    },
+    "alert": {
+      "close": "Закрыть"
+    },
+    "table": {
+      "noData": "Нет данных"
+    }
+  },
+  "next": "Следующий",
+  "minute": "минута",
+  "sending": "Отправка...",
+  "ordering": "Заказ",
+  "accepted": "Ваш заказ получен",
+  "RateService": "Оцените качество обслуживания",
+  "rateTitle": "Оцените наш сервис",
+  "rateInstruction": "Оцените от 1 до 5",
+  "leaveFeedback": "Оставьте свой отзыв о сервисе",
+  "selectCountry": "Выберите вашу страну:",
+  "selectPlaceholder": "Выберите страну...",
+  "send": "Отправить",
+  "later": "Отложить",
+  "orderAccepted": "Заказ принят",
+  "preparing": "Готовится",
+  "orderReady": "Ваш заказ готов"
+}
