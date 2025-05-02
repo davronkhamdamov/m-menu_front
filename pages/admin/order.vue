@@ -113,8 +113,11 @@ const columns = [
         cell: ({ row }) => formatUZS(row.original.total) + t("currency")
     }
 ]
+const config = useRuntimeConfig();
+const baseURL = config.public.apiBaseUrl;
+
 function dowloadXlsx() {
-    const fileUrl = 'http://localhost:8080/v1/order/xlsx';
+    const fileUrl = baseURL + '/v1/order/xlsx';
     const fileName = 'orders.pdf';
     const link = document.createElement('a');
     link.href = fileUrl;

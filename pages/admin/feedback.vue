@@ -92,10 +92,12 @@ const columns = [
         header: t("created_at"),
         cell: ({ row }) => dayjs(row.original.created).format("YYYY-MM-DD hh:mm")
     }
-
 ]
+const config = useRuntimeConfig();
+const baseURL = config.public.apiBaseUrl;
+
 function dowloadXlsx() {
-    const fileUrl = 'http://localhost:8080/v1/feedback/xlsx';
+    const fileUrl = baseURL + '/v1/feedback/xlsx';
     const fileName = 'feedback.pdf';
     const link = document.createElement('a');
     link.href = fileUrl;

@@ -8,18 +8,20 @@ const token = window?.localStorage?.getItem("token")
 const orders = ref([]);
 
 onMounted(async () => {
-  const data = await useApiFetch("/v1/order_staff");  
+  const data = await useApiFetch("/v1/order_staff");
   orders.value = data?.data
 })
 function openModal(order) {
   selectedOrder.value = order;
   isModalOpen.value = true;
 }
+const config = useRuntimeConfig();
+const baseURL = config.public.apiWsBaseUrl;
 
 function handleTakeOrder(order) {
   console.log("Zakaz olindi:", order.id);
 }
-const socket = new WebSocket(`ws://localhost:8080/ws?token=${token}`);
+const socket = new WebSocket(`${baseURL}/ws?token=${token}`);
 import sound from '../assets/sound/mixkit-software-interface-start-2574.wav'
 
 socket.onmessage = (event) => {

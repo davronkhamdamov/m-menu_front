@@ -8,7 +8,8 @@ const props = defineProps({
 const { locale } = useI18n()
 const emit = defineEmits(["close", "take"]);
 const isTaken = ref(false);
-
+const config = useRuntimeConfig();
+const baseURL = config.public.apiBaseUrl;
 const foods = ref([]);
 const loading = ref(true);
 
@@ -16,7 +17,7 @@ async function fetchTableOrders() {
   if (props.order?.id) {
     loading.value = true;
     const { data } = await useFetch(
-      `http://localhost:8080/v1/order/${props.order.id}`
+      `${baseURL}/v1/order/${props.order.id}`
     );
     foods.value = data.value?.data || [];
     loading.value = false;

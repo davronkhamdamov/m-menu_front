@@ -16,10 +16,11 @@ const password = ref('')
 const error = ref('')
 const router = useRouter()
 const { locale } = useI18n()
-
+const config = useRuntimeConfig();
+const baseURL = config.public.apiBaseUrl;
 const login = async () => {
     error.value = ''
-    const { data, error: fetchError } = await useFetch('http://localhost:8080/v1/login', {
+    const { data, error: fetchError } = await useFetch(baseURL + '/v1/login', {
         method: 'POST',
         body: { login: username.value, password: password.value }
     })

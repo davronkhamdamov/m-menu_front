@@ -1,11 +1,12 @@
-const baseURL = "http://localhost:8080";
-
 export async function useApiFetch(
   url,
   lang = "uz",
   method = "GET",
   options = {}
 ) {
+  const config = useRuntimeConfig();
+  const baseURL = config.public.apiBaseUrl;
+
   const token = process.client ? localStorage.getItem("token") : null;
 
   const defaults = {

@@ -1,6 +1,5 @@
 <script setup>
 import * as v from 'valibot'
-
 const open = ref(false)
 const loading = ref(false)
 const props = defineProps({
