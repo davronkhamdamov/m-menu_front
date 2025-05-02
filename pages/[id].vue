@@ -28,6 +28,9 @@ foodStore.tableId = tableId
 onMounted(async () => {
     await foodStore.fetchFoods(locale.value)
 })
+definePageMeta({
+    layout: false
+})
 </script>
 <template>
     <UContainer>
