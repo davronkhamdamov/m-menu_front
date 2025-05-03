@@ -35,9 +35,20 @@
   "enter_food_name": "Enter food name",
   "add_employee": "Add New Employee",
   "enter_login": "Enter login",
+  "recently_bought_foods": "Best-selling products of the past week",
   "enter_password": "Enter password",
   "food_price": "Food Price",
+  "updateTable": "Update Table",
+  "order_id": "Order ID",
+  "enter_role": "Enter role",
+  "status": "Status",
+  "update": "Update",
+  "updateCategory": "Update Category",
   "food_weight": "Food Weight",
+  "please_enter_food_description": "Please enter food description",
+  "food_description_validation": "Food description is required",
+  "food_description": "Food Description",
+  "update_food": "Update Food",
   "order": "Order",
   "food_weight_type": "Food Weight Type",
   "select_weight_type": "Select food weight type",
@@ -133,5 +144,4 @@
   "orderAccepted": "Order accepted",
   "preparing": "Preparing",
   "orderReady": "Your order is ready"
-
 }

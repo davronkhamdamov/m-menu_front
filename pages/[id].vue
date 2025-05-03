@@ -39,21 +39,21 @@ definePageMeta({
             <USelect v-model="language" :items="languages" class=""
                 :icon="languages.find(e => e.value == language).icon" />
         </div>
-        <Carousel/>
+        <Carousel />
         <div v-if="foodStore.isLoading" class="p-4">Loading...</div>
         <div v-else class="last:mb-15">
-            <div class="p-4 last:mb-10" v-for="category in foodStore.foods" :key="category.id">
+            <div class="last:mb-10" v-for="category in foodStore.foods" :key="category.id">
                 <h2>{{ category.name }}</h2>
                 <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 mt-4">
                     <FoodCard v-for="food in category.foods" :key="food.id" :food="food" />
                 </div>
             </div>
-            
-            </div>
-            <div class="fixed bottom-2  w-[80%]  left-1/2 -translate-x-1/2">
-                <NuxtLink to="/order" v-if="foodStore.totalPrice">
-                    <AllSelected class="w-full" />
-                </NuxtLink>
-            </div>
+
+        </div>
+        <div class="fixed bottom-5 w-[95%] left-1/2 -translate-x-1/2">
+            <NuxtLink to="/order" v-if="foodStore.totalPrice">
+                <AllSelected class="w-full" />
+            </NuxtLink>
+        </div>
     </UContainer>
 </template>

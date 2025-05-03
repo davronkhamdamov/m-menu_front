@@ -111,7 +111,7 @@ const changeLabelNav = () => {
 changeLabel(activeNav.value?.path)
 
 watch(active, (newValue) => {
-    changeLabel(routes.value[newValue].path)
+    changeLabel(routes.value[newValue]?.path)
     routes.value.forEach((e, i) => {
         if (newValue == i) {
             router.push(`/${locale.value + e.path}`)

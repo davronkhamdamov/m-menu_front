@@ -21,37 +21,51 @@
 <script setup>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+const loading = ref(true)
 const dashboard = ref({
     total_feedback: 0,
     today_revenue: 0,
     today_orders: 0,
-    one_week_report: []
+})
+const one_week_report = ref([])
+
+const fetchData = async () => {
+    loading.value = true
+    try {
+        const response = await useApiFetch('/v1/dashboard')
+        if (response.message != "OK") {
+            console.error('Fetch error:', response.message);
+        }
+        dashboard.value = response?.data;
+        one_week_report.value = response?.data?.one_week_report
+    } catch (err) {
+        console.error('Unexpected error:', err);
+    } finally {
+        loading.value = false
+    }
+}
+onMounted(async () => {
+    await fetchData()
 })
 
-try {
-    const response = await useApiFetch('/v1/dashboard')
-
-    if (response.message != "OK") {
-        console.error('Fetch error:', response.message);
-    }
-    dashboard.value = response?.data;
-} catch (err) {
-    console.error('Unexpected error:', err);
-}
 const dayNames = ['Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba', 'Yakshanba']
-const weekData = dashboard.value.one_week_report.map(item => {
-    const dayIndex = new Date(item.date).getDay();
-    return dayNames[dayIndex]
+
+const weekData = computed(() => {
+    return one_week_report.value.map(item => {
+        const dayIndex = new Date(item.date).getDay();
+        return dayNames[dayIndex];
+    });
 });
 
-const chartData = {
-    labels: weekData,
-    datasets: [{ label: 'Kunlik Daromad', data: dashboard.value.one_week_report.map(e => e.total), backgroundColor: '#4ade80' }]
-}
-
-
+const chartData = computed(() => ({
+    labels: weekData.value,
+    datasets: [{
+        label: 'Kunlik Daromad',
+        data: one_week_report.value.map(e => e.total),
+        backgroundColor: '#4ade80',
+    }]
+}));
 const chartOptions = {
     responsive: true,
     plugins: { legend: { display: true } }
