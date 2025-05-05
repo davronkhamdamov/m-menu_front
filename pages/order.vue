@@ -103,7 +103,7 @@ const items = [
   },
   {
     title: t("preparing"),
-    icon: "i-lucide-truck",
+    icon: "streamline:travel-hotel-serving-dome-cook-tool-dome-kitchen-drink-serving-platter-dish-tools-food-cooking",
   },
   {
     title: t("orderReady"),

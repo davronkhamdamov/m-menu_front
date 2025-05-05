@@ -12,8 +12,8 @@
             :total="table?.tableApi?.getFilteredRowModel().rows.length"
             @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)" />
     </div>
-    <div class="flex w-full justify-end mt-10" @click="dowloadXlsx">
-        <UButton>
+    <div class="flex w-full justify-end mt-10 gap-5">
+        <UButton @click="dowloadXlsx">
             Excel fileda yuklash
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                 <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
@@ -24,6 +24,9 @@
                         d="M12 16.75a.75.75 0 0 0 .553-.244l4-4.375a.75.75 0 1 0-1.107-1.012l-2.696 2.95V3a.75.75 0 0 0-1.5 0v11.068l-2.696-2.95a.75.75 0 0 0-1.108 1.013l4 4.375a.75.75 0 0 0 .554.244" />
                 </g>
             </svg>
+        </UButton>
+        <UButton icon="ic:sharp-delete" color="error" @click="deleteAllThings">
+            Barchasini o'chirish
         </UButton>
     </div>
 </template>
@@ -38,6 +41,7 @@ const fetchError = ref(null)
 const isLoading = ref(true);
 const { t, locale } = useI18n()
 const table = useTemplateRef('table')
+const toast = useToast()
 
 const pagination = ref({
     pageIndex: 0,
@@ -123,6 +127,22 @@ function dowloadXlsx() {
     link.href = fileUrl;
     link.download = fileName;
     link.click();
+}
+async function deleteAllThings() {
+    isLoading.value = true
+    try {
+        const response = await useApiFetch("/v1/orders", '', "DELETE")
+        if (response.status > 200) {
+            toast.add({ title: 'Xatolik', description: "Nimadir xato ketdi", color: 'error' })
+            return
+        }
+        toast.add({ title: 'Mufavaqqiyatli', description: 'Mufavaqqiyatli o\'chirildi', color: 'success' })
+    } catch (err) {
+        console.log(err);
+    } finally {
+        isLoading.value = false
+        fetchData()
+    }
 }
 
 onMounted(async () => {
