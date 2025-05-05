@@ -25,10 +25,9 @@ export async function useApiFetch(
   return fetch(baseURL + url + "?lang=" + lang, defaults)
     .then((res) => res.json())
     .then((data) => {
-      if (data.status == 401 || data.status == 404) {
-        // window.location = "/login";
+      if (data.status == 401) {
+        window.location = "/login";
         console.log(data);
-        
       }
       return data;
     })
