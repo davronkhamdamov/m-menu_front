@@ -35,7 +35,7 @@ definePageMeta({
 <template>
     <UContainer>
         <div class="flex justify-between items-center p-3  shadow-2xl">
-            <h3>logo</h3>
+            <h3>M Menu</h3>
             <USelect v-model="language" :items="languages" class=""
                 :icon="languages.find(e => e.value == language).icon" />
         </div>
