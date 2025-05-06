@@ -37,7 +37,7 @@ const state = reactive({
     name_en: '',
     price: 0,
     weight: 0,
-    weight_type: "G",
+    weight_type: "g",
     image_url: '',
     category_id: '',
     description_uz: "",
@@ -108,7 +108,7 @@ async function onSubmit(e) {
         state.name_en = ''
         state.price = 0
         state.weight = 0
-        state.weight_type = "G"
+        state.weight_type = "g"
         state.image_url = ''
         state.category_id = ''
         state.description_uz = ""
@@ -129,6 +129,10 @@ const items = ref([
     {
         label: 'Gram',
         value: 'g'
+    },
+    {
+        label: 'Dona',
+        value: 't'
     },
 ])
 watch(open, (async () => {
