@@ -58,7 +58,7 @@
   "update_food": "Taomni yangilash",
   "updateCategory": "Kategoriya yangilash",
   "confirm_delete_table": "Stolni rostdan ham o'chirmoqchimisiz?",
-  "recently_bought_foods": "So'ngi bir hafta davomida eng ko'p sotildan mahsulotlar",
+  "recently_bought_foods": "Hafta davomida eng ko'p buyurtma qilingan mahsulotlar",
   "login_validation": "Login 3 tadan ko'p bo'lishi kerak",
   "password_validation": "Parol kamida 6 ta belgidan iborat bo'lishi kerak",
   "food_name_validation": "Ovqat nomi 3 tadan ko'p bo'lishi kerak",
