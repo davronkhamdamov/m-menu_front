@@ -107,6 +107,11 @@ const columns = [
         cell: ({ row }) => dayjs(row.original.created).format("YYYY-MM-DD hh:mm")
     },
     {
+        accessorKey: 'region',
+        header: t("region"),
+        cell: ({ row }) => row?.original?.feedback?.region || "-"
+    },
+    {
         accessorKey: 'status',
         header: t("status"),
         cell: ({ row }) => h(UBadge, statusObject[row.getValue("status")])

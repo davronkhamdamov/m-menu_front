@@ -178,13 +178,13 @@ watch(open, (async () => {
                         <UInput v-model="state.name_en" class="w-full"
                             :placeholder="$t('enter_food_name') + ' english'" />
                     </UFormField>
-                    <UFormField :label="$t('food_description','Food description') + ' Oʻzbek'" name="description_uz">
+                    <UFormField :label="$t('food_description', 'Food description') + ' Oʻzbek'" name="description_uz">
                         <UTextarea v-model="state.description_uz" class="w-full" />
                     </UFormField>
-                    <UFormField :label="$t('food_description','Food description') + ' Русский'" name="description_ru">
+                    <UFormField :label="$t('food_description', 'Food description') + ' Русский'" name="description_ru">
                         <UTextarea v-model="state.description_ru" class="w-full" />
                     </UFormField>
-                    <UFormField :label="$t('food_description','Food description') + ' English'" name="description_en">
+                    <UFormField :label="$t('food_description', 'Food description') + ' English'" name="description_en">
                         <UTextarea v-model="state.description_en" class="w-full" />
                     </UFormField>
                     <UFormField :label="$t('food_price')" name="price">
@@ -199,7 +199,8 @@ watch(open, (async () => {
                             }" />
                     </UFormField>
                     <UFormField :label="$t('food_weight')" name="weight">
-                        <UInputNumber v-model="state.weight" class="w-full" :placeholder="$t('enter_food_weight')" />
+                        <UInputNumber v-model="state.weight" class="w-full" :placeholder="$t('enter_food_weight')"
+                            :step="0.1" />
                     </UFormField>
                     <UFormField :label="$t('food_weight_type')" name="weight_type">
                         <USelect v-model="state.weight_type" :items="items" class="w-full"
@@ -219,7 +220,8 @@ watch(open, (async () => {
                 </div>
                 <div class="flex justify-end gap-5">
                     <UButton :label="$t('cancel')" color="neutral" variant="outline" @click="open = false" />
-                    <UButton :label="props.id ?$t('update') : $t('create')" color="neutral" type="submit" :loading="isLoading" />
+                    <UButton :label="props.id ? $t('update') : $t('create')" color="neutral" type="submit"
+                        :loading="isLoading" />
                 </div>
             </UForm>
         </template>
