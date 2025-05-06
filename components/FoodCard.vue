@@ -4,11 +4,20 @@ import { useFoodStore } from "~/stores/food";
 const store = useFoodStore();
 const open = ref(false)
 const props = defineProps(["food"]);
-
+const weight_type = ref(props.food.weight_type)
+const { t } = useI18n()
 const selected = computed(() =>
   store.selectedFoods.find((f) => f.id === props.food.id)
 );
-
+const weightTypeObj = {
+  g: t("gram"),
+  kg: t("kilogram"),
+  t: t("count"),
+  l: t("litr")
+}
+function getWeightType() {
+  return weightTypeObj[weight_type.value]
+}
 const increment = () => store.addFood(props.food);
 const decrement = () => store.decrementFood(props.food.id);
 
@@ -27,13 +36,11 @@ const formatUZS = (value) =>
       <div class="aspect-[4/3] overflow-hidden rounded-xl mb-3" @click="open = true">
         <img :src="food.image_url" alt="Food image" class="object-cover w-full h-full" />
       </div>
-
       <div class="flex-1 mb-3" @click="open = true">
         <p class="font-semibold text-base line-clamp-1">{{ formatUZS(food.price) }} so'm</p>
         <p class="text-sm font-medium line-clamp-2">{{ food.name }}</p>
-        <p class="text-xs text-gray-500 mt-1">{{ food.weight }} {{ food.weight_type }}</p>
+        <p class="text-xs text-gray-500 mt-1">{{ food.weight }} {{ getWeightType() }}</p>
       </div>
-
       <div class="btnn">
         <div v-if="selected"
           class="bg-secondary-500 w-full rounded-3xl px-5 h-9 text-white text-xl font-semibold flex items-center justify-between">
