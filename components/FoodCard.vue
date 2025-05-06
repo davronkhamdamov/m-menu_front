@@ -6,9 +6,11 @@ const open = ref(false)
 const props = defineProps(["food"]);
 const weight_type = ref(props.food.weight_type)
 const { t } = useI18n()
+
 const selected = computed(() =>
   store.selectedFoods.find((f) => f.id === props.food.id)
 );
+
 const weightTypeObj = {
   g: t("gram"),
   kg: t("kilogram"),
@@ -27,21 +29,21 @@ const formatUZS = (value) =>
     currency: "UZS",
     minimumFractionDigits: 0,
   }).format(value).replace("UZS", "").trim();
+
 </script>
 
 <template>
-  <UCard class="h-full flex flex-col">
-    <div class="flex flex-col h-full justify-between">
-
+  <UCard :ui="{ body: 'h-full' }">
+    <template ref="card" class="flex flex-col h-full justify-between">
       <div class="aspect-[4/3] overflow-hidden rounded-xl mb-3" @click="open = true">
         <img :src="food.image_url" alt="Food image" class="object-cover w-full h-full" />
       </div>
-      <div class="flex-1 mb-3" @click="open = true">
+      <div class="flex-2 mb-3" @click="open = true">
         <p class="font-semibold text-base line-clamp-1">{{ formatUZS(food.price) }} so'm</p>
         <p class="text-sm font-medium line-clamp-2">{{ food.name }}</p>
         <p class="text-xs text-gray-500 mt-1">{{ food.weight }} {{ getWeightType() }}</p>
       </div>
-      <div class="btnn">
+      <div class="select-none">
         <div v-if="selected"
           class="bg-secondary-500 w-full rounded-3xl px-5 h-9 text-white text-xl font-semibold flex items-center justify-between">
           <button @click="decrement" class="cursor-pointer">−</button>
@@ -53,7 +55,7 @@ const formatUZS = (value) =>
           +
         </div>
       </div>
-    </div>
+    </template>
     <UDrawer v-model:open="open">
       <template #content>
         <Description :food="food" />

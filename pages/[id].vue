@@ -41,14 +41,13 @@ definePageMeta({
         </div>
         <Carousel />
         <div v-if="foodStore.isLoading" class="p-4">Loading...</div>
-        <div v-else class="last:mb-15">
-            <div class="last:mb-10" v-for="category in foodStore.foods" :key="category.id">
+        <div v-else>
+            <div class="my-5 last:mb-24" v-for="category in foodStore.foods" :key="category.id">
                 <h2>{{ category.name }}</h2>
                 <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 mt-4">
                     <FoodCard v-for="food in category.foods" :key="food.id" :food="food" />
                 </div>
             </div>
-
         </div>
         <div class="fixed bottom-5 w-[95%] left-1/2 -translate-x-1/2">
             <NuxtLink to="/order" v-if="foodStore.totalPrice">
