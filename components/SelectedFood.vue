@@ -2,6 +2,14 @@
 import { useFoodStore } from '~/stores/food'
 
 const store = useFoodStore()
+const { t } = useI18n()
+
+const weightTypeObj = {
+  g: t("gram"),
+  kg: t("kilogram"),
+  t: t("count"),
+  l: t("litr")
+}
 
 </script>
 
@@ -12,7 +20,7 @@ const store = useFoodStore()
     <div class="flex flex-wrap gap-2 w-1/2 content-center">
       <p class="text-xs">{{ food.name }}</p>
       <p class="text-xs font-medium">{{ formatUZS(food.price) }} so'm</p>
-      <p class="text-xs text-gray-400">{{ food.weight }} {{ food.weight_type }}</p>
+      <p class="text-xs text-gray-400">{{ food.weight }} {{ weightTypeObj[food.weight_type] }}</p>
     </div>
     <div v-if="!store.counter"
       class="bg-secondary-500 w-[30%] rounded-xl px-4 py-1 font-semibold flex items-center justify-between">

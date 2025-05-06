@@ -2,6 +2,18 @@
 const props = defineProps({
     food: Object
 });
+const { t } = useI18n()
+const weight_type = ref(props.food.weight_type)
+
+const weightTypeObj = {
+    g: t("gram"),
+    kg: t("kilogram"),
+    t: t("count"),
+    l: t("litr")
+}
+function getWeightType() {
+    return weightTypeObj[weight_type.value]
+}
 </script>
 
 <template>
@@ -10,7 +22,7 @@ const props = defineProps({
         <p class="text-sm mt-4">{{ food.description }}</p>
         <p class="font-medium mt-4">{{ formatUZS(food.price) }} so'm</p>
         <p class="text-sm">{{ food.name }}</p>
-        <p class="text-xs mt-1">{{ food.weight }} {{ food.weight_type }}</p>
+        <p class="text-xs mt-1">{{ food.weight }} {{ getWeightType() }}</p>
     </div>
 </template>
 
