@@ -13,7 +13,6 @@
             </div>
         </div>
         <br>
-        <p>{{ $t('adminSettingsComingSoon') }}</p>
     </div>
 </template>
 
