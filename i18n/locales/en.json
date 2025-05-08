@@ -1,5 +1,6 @@
 {
   "name": "English",
+  "thank_you_message": "Thank you for using our services",
   "code": "en",
   "dashboard": "Dashboard",
   "table": "Tables",
