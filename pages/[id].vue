@@ -49,7 +49,7 @@ definePageMeta({
                 </div>
             </div>
         </div>
-        <div class="fixed bottom-5 w-[95%] left-1/2 -translate-x-1/2">
+        <div class="fixed bottom-5 w-[95%] left-1/2 -translate-x-1/2 z-10">
             <NuxtLink to="/order" v-if="foodStore.totalPrice">
                 <AllSelected class="w-full" />
             </NuxtLink>

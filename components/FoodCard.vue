@@ -35,8 +35,11 @@ const formatUZS = (value) =>
 <template>
   <UCard :ui="{ body: 'h-full' }">
     <template ref="card" class="flex flex-col h-full justify-between">
-      <div class="aspect-[4/3] overflow-hidden rounded-xl mb-3" @click="open = true">
-        <img :src="food.image_url" alt="Food image" class="object-cover w-full h-full" />
+      <div class="aspect-[4/3] overflow-hidden rounded-xl mb-3 bg-center relative" @click="open = true">
+        <div class="absolute inset-0 bg-cover bg-center blur-2xl scale-125 z-0"
+          :style="{ backgroundImage: `url(${food.image_url})` }"></div>
+        <img :src="food.image_url" alt="Food image"
+          class="object-contain w-full h-full relative z-1 shadow-2xl shadow-white" />
       </div>
       <div class="flex-2 mb-3" @click="open = true">
         <p class="font-semibold text-base line-clamp-1">{{ formatUZS(food.price) }} so'm</p>

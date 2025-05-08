@@ -16,7 +16,12 @@ const weightTypeObj = {
 <template>
   <div v-for="food in store.selectedFoods" :key="food.id"
     :class="store.counter ? 'flex items-center gap-1 my-10 justify-around' : 'flex items-center gap-1 my-10 justify-between'">
-    <img :src="food.image_url" alt="" class="w-20 rounded-xl" />
+    <div class="w-20 h-20 overflow-hidden rounded-xl mb-3 bg-center relative" @click="open = true">
+      <div class="absolute inset-0 bg-cover bg-center blur-2xl scale-125 z-0"
+        :style="{ backgroundImage: `url(${food.image_url})` }"></div>
+      <img :src="food.image_url" alt="Food image"
+        class="object-contain w-full h-full relative z-1 shadow-2xl shadow-white" />
+    </div>
     <div class="flex flex-wrap gap-2 w-1/2 content-center">
       <p class="text-xs">{{ food.name }}</p>
       <p class="text-xs font-medium">{{ formatUZS(food.price) }} so'm</p>
