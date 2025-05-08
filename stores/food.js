@@ -37,6 +37,9 @@ export const useFoodStore = defineStore("foodStore", () => {
   const clearCart = () => {
     counter.value = true;
   };
+  const resetSelectedCard = () => {
+    selectedFoods.value = [];
+  };
 
   const totalPrice = computed(() =>
     selectedFoods.value.reduce((sum, f) => sum + f.price * f.count, 0)
@@ -53,5 +56,6 @@ export const useFoodStore = defineStore("foodStore", () => {
     tableId,
     counter,
     isLoading,
+    resetSelectedCard,
   };
 });

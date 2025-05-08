@@ -7,6 +7,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const { locale, t } = useI18n();
 const orderId = ref("")
+const feedback_error = ref("")
 
 const goBack = () => {
   router.back();
@@ -84,6 +85,10 @@ const sendOrder = async () => {
   };
 };
 const sendFeedback = async () => {
+  if (star.value == 0) {
+    feedback_error.value = "Iltimos, biror baho qo'ying";
+    return
+  }
   isSending.value = true;
   const response = await useApiFetch("/v1/feedback", locale.value, "POST", {
     table_id: store.tableId,
@@ -97,6 +102,7 @@ const sendFeedback = async () => {
     openFeedbackModal.value = false;
     endStatus.value = true;
   } else {
+    isSending.value = false;
     error.value = "Fikringizni yuborishda xatolik yuz berdi.";
   }
 };
@@ -116,6 +122,7 @@ const items = [
 ];
 watch(endStatus, (newValue) => {
   if (success && !newValue) {
+    console.log(store.resetSelectedCard());
     router.push(`/${locale.value}/${store.tableId}`)
   }
 })
@@ -162,6 +169,7 @@ watch(endStatus, (newValue) => {
             {{ t("rateInstruction") }}
           </p>
           <br />
+          <p class="text-center text-red-600">{{ feedback_error }}</p>
           <div class="flex justify-evenly w-[70%] mx-auto mb-5">
             <button class="duration-500" v-for="(_, i) in new Array(5).fill('*')" :key="i" @click="star = i + 1">
               <svg class="duration-500" v-if="star <= i" xmlns="http://www.w3.org/2000/svg" width="45" height="45"

@@ -40,7 +40,6 @@ socket.onmessage = (event) => {
       })
     } else if (message.data.status == "done") {
       orders.value = orders.value.filter(e => e.id != message.data.id)
-      console.log(message.data.status);
     }
   }
 }

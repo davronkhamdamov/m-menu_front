@@ -15,7 +15,7 @@
     </div>
     <div class="flex w-full justify-end" @click="dowloadXlsx">
         <UButton>
-            Excel fileda yuklash
+            {{ $t("download_as_excel") }}
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                 <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                     <path

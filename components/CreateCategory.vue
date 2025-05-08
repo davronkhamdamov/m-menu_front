@@ -12,11 +12,12 @@ const props = defineProps({
         required: false
     }
 });
+const { t } = useI18n()
 
 const schema = v.object({
-    name_en: v.pipe(v.string(), v.minLength(3, "Toifa nomi 3 tadan ko'p bo'lishi kerak")),
-    name_uz: v.pipe(v.string(), v.minLength(3, "Toifa nomi 3 tadan ko'p bo'lishi kerak")),
-    name_ru: v.pipe(v.string(), v.minLength(3, "Toifa nomi 3 tadan ko'p bo'lishi kerak")),
+    name_en: v.pipe(v.string(), v.minLength(3, t("category_name_should_be_more_than_3"))),
+    name_uz: v.pipe(v.string(), v.minLength(3, t("category_name_should_be_more_than_3"))),
+    name_ru: v.pipe(v.string(), v.minLength(3, t("category_name_should_be_more_than_3"))),
 })
 
 const state = reactive({
@@ -31,17 +32,17 @@ async function onSubmit(event) {
         if (props.id) {
             const response = await useApiFetch(`/v1/category/${props.id}`, null, "PUT", event.data)
             if (response.status >= 400) {
-                toast.add({ title: 'Xatolik', description: response.message, color: 'error' })
+                toast.add({ title: t("error"), description: response.message, color: 'error' })
                 return
             }
-            toast.add({ title: 'Mufavaqqiyatli', description: 'Toifa mufavaqqiyatli yangilandi', color: 'success' })
+            toast.add({ title: t("success"), description: t("category_updated_successfully"), color: 'success' })
         } else {
             const response = await useApiFetch("/v1/category", null, "POST", event.data)
             if (response.status >= 400) {
                 toast.add({ title: 'Xatolik', description: response.message, color: 'error' })
                 return
             }
-            toast.add({ title: 'Mufavaqqiyatli', description: 'Toifa mufavaqqiyatli yaratildi', color: 'success' })
+            toast.add({ title: 'Mufavaqqiyatli', description: t("category_created_successfully"), color: 'success' })
         }
     } catch (err) {
         console.log(err);
@@ -55,7 +56,7 @@ watch(open, (async () => {
     if (props.id) {
         const response = await useApiFetch(`/v1/category/${props.id}`, '', "GET")
         if (response.status >= 400) {
-            toast.add({ title: 'Xatolik', description: "Nimadir xatolik ketdi!", color: 'error' })
+            toast.add({ title: 'Xatolik', description: t("something_went_wrong"), color: 'error' })
             return
         }
         state.name_en = response.data.name_en
@@ -74,13 +75,13 @@ watch(open, (async () => {
         <template #body>
             <UForm :schema="schema" :state="state" @submit="onSubmit">
                 <div class="flex gap-5 h-auto flex-col">
-                    <UFormField label="Toifa nomi o'zbek" name="name_uz" class="w-full">
+                    <UFormField :label="$t('category_name_uz')" name="name_uz" class="w-full">
                         <UInput v-model="state.name_uz" :min="1" :max="50" class="w-full" />
                     </UFormField>
-                    <UFormField label="Toifa nomi ruscha" name="name_ru" class="w-full">
+                    <UFormField :label="$t('category_name_ru')" name="name_ru" class="w-full">
                         <UInput v-model="state.name_ru" :min="1" :max="50" class="w-full" />
                     </UFormField>
-                    <UFormField label="Toifa nomi inglizcha" name="name_en" class="w-full">
+                    <UFormField :label="$t('category_name_en')" name="name_en" class="w-full">
                         <UInput v-model="state.name_en" :min="1" :max="50" class="w-full" />
                     </UFormField>
                 </div>

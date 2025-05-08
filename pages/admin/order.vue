@@ -5,7 +5,8 @@
     </div>
     <UTable ref="table" :pagination-options="{ getPaginationRowModel: getPaginationRowModel() }"
         v-model:pagination="pagination" v-model:column-pinning="columnPinning" :loading="isLoading"
-        loading-color="primary" loading-animation="carousel" :data="tables" class="flex-1" :columns="columns" />
+        loading-color="primary" loading-animation="carousel" :data="tables" class="w-[90vw] xl:w-[100%] min-h-[300px]"
+        :columns="columns" />
     <div class="flex justify-center border-t border-(--ui-border) pt-4">
         <UPagination :default-page="(table?.tableApi?.getState().pagination.pageIndex || 0) + 1"
             :items-per-page="table?.tableApi?.getState().pagination.pageSize"
@@ -14,7 +15,7 @@
     </div>
     <div class="flex w-full justify-end mt-10 gap-5">
         <UButton @click="dowloadXlsx">
-            Excel fileda yuklash
+            {{ $t("download_as_excel") }}
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                 <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
                     <path
@@ -26,7 +27,7 @@
             </svg>
         </UButton>
         <UButton icon="ic:sharp-delete" color="error" @click="deleteAllThings">
-            Barchasini o'chirish
+            {{ $t("delete_all") }}
         </UButton>
     </div>
 </template>
@@ -74,17 +75,17 @@ const fetchData = async () => {
 };
 const statusObject = {
     pending: {
-        label: "Kutilmoqda",
+        label: t('pending'),
         variant: "subtle",
         color: "info"
     },
     in_process: {
-        label: "Jarayonda",
+        label: t("processing"),
         variant: "subtle",
         color: "warning"
     },
     done: {
-        label: "Yakunlangan",
+        label: t("completed"),
         variant: "subtle",
         color: "success"
     }

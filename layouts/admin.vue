@@ -20,7 +20,7 @@
                 size="xl" :ui="{ trigger: 'flex-1' }" :items="items" :content="false">
             </UTabs>
             <div class="flex flex-col flex-1">
-                <main class="p-6">
+                <main class="py-4 pb-20">
                     <slot></slot>
                     <Loader v-if="isLoading" />
                 </main>
